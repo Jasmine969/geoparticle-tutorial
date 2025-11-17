@@ -13,6 +13,8 @@ Obtain all the particle coordinates
 First, we need to import the necessary libraries and set up the simulation parameters:
 
 .. code-block:: python
+   :linenos:
+
    import numpy as np
    from lammps import lammps
    import geoparticle as gp
@@ -27,6 +29,8 @@ First, we need to import the necessary libraries and set up the simulation param
 Create the geometry of the solid wall:
 
 .. code-block:: python
+   :linenos:
+
    wall = gp.ThickRectangle(l_box, h_box, n_thick, 0, 'z', dl, 'wall')
 
 One may ask where the wall is located. All the geometries are created by positioning their centers
@@ -40,6 +44,8 @@ with the wall, as well as the gas. To create the gas, we can create a large rect
 and subtract the water region from it:
 
 .. code-block:: python
+   :linenos:
+
    water = gp.FilledRectangle(l_water, h_water, 0, 'z', dl, name='water').shift(x=dl, y=dl)
    gas = gp.FilledRectangle(
        l_box - 2 * dl, h_box - 2 * dl, 0, 'z', dl, name='gas'
@@ -54,6 +60,8 @@ Create particles in LAMMPS
 We should first create a LAMMPS instance:
 
 .. code-block:: python
+   :linenos:
+
    lmp = lammps(cmdargs=['-screen', 'none', '-log', 'none'])
 
 Now create the simulation box. We can leave some buffer between the geometries and the box boundaries:
@@ -82,8 +90,9 @@ The required method is `create_atoms <https://docs.lammps.org/Python_module.html
 the number of atoms, their IDs, types, and coordinates as input arguments.
 We can use the ``flatten_coords`` property of each geometry to get the coordinates in the required format.
 
-
 .. code-block:: python
+   :linenos:
+
    n_atoms_wall = wall.size
    lmp.create_atoms(
        n_atoms_wall, np.arange(n_atoms_wall) + 1 + lmp.get_natoms(),
@@ -102,24 +111,18 @@ We can use the ``flatten_coords`` property of each geometry to get the coordinat
                 f' n_atoms_all: {n_atoms_all}.'
    print(log_n_atom)
 
-Save the data file for LAMMPS for ensuing visualization and simulation.
-Note that we must assign mass to each particle before writing the data file.
-
-.. code-block:: python
-   m0_fluid = dl ** 2 * 993
-   m0_gas = dl ** 2 * 1.1
-   lmp.commands_string(f"""
-   mass 1*2 {m0_fluid}
-   mass 3 {m0_gas}
-   run 0
-   write_data gas_liquid_dam2D.data
-""")
-
-Geoparticle provides ``check_overlap`` method to check whether a geometry have overlapping particles.
-To check the overlapping particles in the entire system, we can use LAMMPS commands to delete overlapping atoms.
+===============================
+Check the overlapping particles
+===============================
+Geoparticle already provides ``check_overlap`` method to check the overlapping particles, which is done
+automatically. However, it only checks the overlapping particles within each geometry.
+To check the entire system, one way is to compute the union of all geometries and use the ``check_overlap`` method.
+Here, we alternatively use LAMMPS commands for the check. We first delete the overlapping atoms.
 If the number of atoms remains the same after deleting overlapping atoms, then there is no overlapping atoms
 
 .. code-block:: python
+   :linenos:
+
    # check atom overlapping
    lmp.commands_string(f"""
    pair_style      zero {dl * 2}
@@ -132,3 +135,19 @@ If the number of atoms remains the same after deleting overlapping atoms, then t
        print('Congrats, no atoms are overlapped!')
    else:
        raise RuntimeError(f'{n_atoms_all - n_atoms_all_now} atoms are overlapped!')
+
+Save the data file for LAMMPS for ensuing visualization and simulation.
+Note that we must assign mass to each particle before writing the data file.
+
+.. code-block:: python
+   :linenos:
+
+   m0_fluid = dl ** 2 * 993
+   m0_gas = dl ** 2 * 1.1
+   lmp.commands_string(f"""
+   mass 1*2 {m0_fluid}
+   mass 3 {m0_gas}
+   run 0
+   write_data gas_liquid_dam2D.data
+""")
+
