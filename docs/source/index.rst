@@ -9,8 +9,10 @@ Contents
 
 .. toctree::
    :maxdepth: 2
+   :titlesonly:
 
    installation
    background
-   examples/index
+   gallery
+   tutorials
    api_reference
