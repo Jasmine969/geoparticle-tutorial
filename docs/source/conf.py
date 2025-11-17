@@ -2,12 +2,12 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'geoparticle-documentation'
+copyright = '2025, Hong Zhu'
+author = 'Hong Zhu'
 
-release = '0.1'
-version = '0.1.0'
+release = '0.1.1'
+version = '0.1.1'
 
 # -- General configuration
 
