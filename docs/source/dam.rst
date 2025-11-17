@@ -139,7 +139,7 @@ If the number of atoms remains the same after deleting overlapping atoms, then t
 Save the data file for LAMMPS for ensuing visualization and simulation.
 Note that we must assign mass to each particle before writing the data file.
 
-.. code-block:: python
+.. code-block:: Python
    :linenos:
 
    m0_fluid = dl ** 2 * 993
@@ -149,5 +149,5 @@ Note that we must assign mass to each particle before writing the data file.
    mass 3 {m0_gas}
    run 0
    write_data gas_liquid_dam2D.data
-""")
+   """)
 
