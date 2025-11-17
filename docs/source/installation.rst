@@ -1,3 +1,7 @@
+Installation
+============
+
+======================
 Installing from pypi
 ======================
 
@@ -5,6 +9,7 @@ Installing from pypi
 
     pip install geoparticle
 
+=============================
 Installing from the source code
 =============================
 
