@@ -6,8 +6,16 @@ The expected result is as follows:
 
 .. image:: static/dam.png
 
+Geoparticle elements we will learn in this tutorial include:
+
+- 2D geometries: ``ThickRectangle`` and ``FilledRectangle``
+
+- Operations: ``subtract`` and ``shift``
+
+- ``Geometry`` class member: ``xs``, ``ys``, and ``flatten_coords``
+
 ===================================
-Obtain all the particle coordinates
+Specify the parameters
 ===================================
 
 First, we need to import the necessary libraries and set up the simulation parameters:
@@ -26,12 +34,23 @@ First, we need to import the necessary libraries and set up the simulation param
    h_water = 0.0045 # height of the water column
    n_thick = 2 # number of particles in thickness direction
 
+===================================
+Obtain all the particle coordinates
+===================================
+
 Create the geometry of the solid wall:
 
 .. code-block:: python
    :linenos:
 
-   wall = gp.ThickRectangle(l_box, h_box, n_thick, 0, 'z', dl, 'wall')
+   wall = gp.ThickRectangle(
+       length=l_box,  # inner length
+       width=h_box,  # inner height
+       n_thick=n_thick,  # number of particle layers
+       axis='z',  # axis normal to the rectangle plane
+       dl=dl,  # particle spacing
+       name='wall'  # name of the geometry for reference
+   )
 
 One may ask where the wall is located. All the geometries are created by positioning their centers
 (for solids of revolution) or vertices (for other solids like the block). See the doc of certain geometries
@@ -46,10 +65,26 @@ and subtract the water region from it:
 .. code-block:: python
    :linenos:
 
-   water = gp.FilledRectangle(l_water, h_water, 0, 'z', dl, name='water').shift(x=dl, y=dl)
+   water = gp.FilledRectangle(
+       length=l_water, width=h_water, axis='z', dl=dl, name='water'
+   ).shift(x=dl, y=dl)
    gas = gp.FilledRectangle(
-       l_box - 2 * dl, h_box - 2 * dl, 0, 'z', dl, name='gas'
-   ).shift(x=dl, y=dl).subtract(water, rmax=1e-6)
+       l_box - 2 * dl, h_box - 2 * dl, 'z', dl, name='gas'
+   ).shift(x=dl, y=dl)
+   gas = gas.subtract(
+       water,  # which geometry to subtract
+       rmax=1e-6  # maximum distance to look for overlapping
+   )
+
+In addition to use ``gas = gas.subtract(water, rmax)`` for subtraction, three other methods are provided:
+
+- ``gas = gp.Subtract(gas, water, rmax)``
+
+- ``gas = gas - water``
+
+- ``gas -= water``
+
+The latter two methods use the default ``rmax`` value, i.e., 1e-5, defined in the ``Geometry`` class.
 
 Now we have obtained all the particle coordinates.
 
@@ -64,7 +99,8 @@ We should first create a LAMMPS instance:
 
    lmp = lammps(cmdargs=['-screen', 'none', '-log', 'none'])
 
-Now create the simulation box. We can leave some buffer between the geometries and the box boundaries:
+Now create the simulation box. We can leave some buffer between the geometries and the box boundaries.
+Access the x-, y-, and z-coordinates of the wall geometry using the ``xs``, ``ys``, and ``zs`` properties.
 
 .. code-block:: python
    fac_buf = 1
@@ -139,7 +175,7 @@ If the number of atoms remains the same after deleting overlapping atoms, then t
 Save the data file for LAMMPS for ensuing visualization and simulation.
 Note that we must assign mass to each particle before writing the data file.
 
-.. code-block:: Python
+.. code-block:: python
    :linenos:
 
    m0_fluid = dl ** 2 * 993
