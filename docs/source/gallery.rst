@@ -3,13 +3,13 @@ Gallery
 
 This gallery shows most of the geometries and operations that can be constructed using geoparticle.
 
-.. image:: https://fengimages-1310812903.cos.ap-shanghai.myqcloud.com/20251117124159.png
+.. image:: static/1Dgeo.png
 
-.. image:: https://fengimages-1310812903.cos.ap-shanghai.myqcloud.com/20251117124218.png
+.. image:: static/2Dgeo.png
 
-.. image:: https://fengimages-1310812903.cos.ap-shanghai.myqcloud.com/20251117124231.png
+.. image:: static/3Dgeo.png
 
-.. image:: https://fengimages-1310812903.cos.ap-shanghai.myqcloud.com/20251117124246.png
+.. image:: static/ops.png
 
 ===========
 Source code

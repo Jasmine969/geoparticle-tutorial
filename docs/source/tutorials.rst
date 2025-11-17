@@ -5,4 +5,4 @@ Tutorials
    :maxdepth: 1
 
    dam
-   duodenum
+   intestine

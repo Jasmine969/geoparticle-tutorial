@@ -4,8 +4,6 @@ Welcome to geoparticle's documentation!
 Geoparticle is a Python package for geometry construction in particle-based simulation.
 I mainly use this package for geometry construction in LAMMPS, with some examples provided in the repository; of course, it can also be used for other software.
 
-Click `here <https://github.com/Jasmine969/geoparticle>`_ to visit the GitHub repository.
-
 ========
 Contents
 ========
@@ -19,6 +17,13 @@ Contents
    gallery
    tutorials
    api_reference
+
+================
+Useful links
+================
+GitHub repository: https://github.com/Jasmine969/geoparticle
+
+PyPI page: https://pypi.org/project/geoparticle/
 
 ================
 About the author
