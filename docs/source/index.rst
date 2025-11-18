@@ -16,6 +16,7 @@ Contents
    background
    gallery
    tutorials
+   topo
    api_reference
 
 ================

@@ -6,13 +6,13 @@ The expected result is as follows:
 
 .. image:: static/dam.png
 
-Geoparticle elements we will learn in this tutorial include:
+What we will learn in this tutorial:
 
-- 2D geometries: ``ThickRectangle`` and ``FilledRectangle``
+- Creating 2D geometries: ``ThickRectangle`` and ``FilledRectangle``
 
-- Operations: ``subtract`` and ``shift``
+- Performing operations: ``subtract`` and ``shift``
 
-- ``Geometry`` class member: ``xs``, ``ys``, and ``flatten_coords``
+- Accessing ``Geometry`` class member: ``xs``, ``ys``, and ``flatten_coords``
 
 ===================================
 Specify the parameters
@@ -52,11 +52,11 @@ Create the geometry of the solid wall:
        name='wall'  # name of the geometry for reference
    )
 
-One may ask where the wall is located. All the geometries are created by positioning their centers
-(for solids of revolution) or vertices (for other solids like the block). See the doc of certain geometries
-for how they are postioned related to the origin. Geoparticle typically does not provide
-any parameter to control the absolute position of the geometry. Instead, we can always use the ``shift`` method to
-move the geometry to the desired location.
+One may ask where the wall is located. All the geometries are created by placing their centers
+(for solids of revolution) or vertices (for other solids like the block) at the origin.
+See the doc of certain geometries for how they are postioned related to the origin.
+Geoparticle typically does not provide any parameter to control the absolute position of the geometry.
+Instead, we can always use the ``shift`` method to move the geometry to the desired location.
 
 Now we should move the water region ``dl`` to the right and ``dl`` up to avoid overlapping
 with the wall, as well as the gas. To create the gas, we can create a large rectangle
@@ -76,7 +76,7 @@ and subtract the water region from it:
        rmax=1e-6  # maximum distance to look for overlapping
    )
 
-In addition to use ``gas = gas.subtract(water, rmax)`` for subtraction, three other methods are provided:
+In addition to using ``gas = gas.subtract(water, rmax)`` for subtraction, three other methods are provided:
 
 - ``gas = gp.Subtract(gas, water, rmax)``
 
@@ -84,7 +84,7 @@ In addition to use ``gas = gas.subtract(water, rmax)`` for subtraction, three ot
 
 - ``gas -= water``
 
-The latter two methods use the default ``rmax`` value, i.e., 1e-5, defined in the ``Geometry`` class.
+The latter two methods use the default ``rmax`` value, i.e., 1e-5 (m), defined in the ``Geometry`` class.
 
 Now we have obtained all the particle coordinates.
 
