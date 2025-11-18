@@ -1,0 +1,4 @@
+.. currentmodule:: geoparticle.ops
+
+Operations
+============

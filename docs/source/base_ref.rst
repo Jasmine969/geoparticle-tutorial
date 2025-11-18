@@ -1,8 +1,7 @@
 .. currentmodule:: geoparticle.base
 
-Geometry class
+Base class
 ===============
 
 .. autoclass:: Geometry
-
 

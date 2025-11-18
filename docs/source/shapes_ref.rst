@@ -1,0 +1,5 @@
+.. currentmodule:: geoparticle.shapes
+
+Shapes
+=======
+
