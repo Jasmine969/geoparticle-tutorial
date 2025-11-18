@@ -38,13 +38,14 @@ class Geometry(metaclass=CounterMeta):
     Shortest import: `from geoparticle import Geometry`
     """
 
-    def __init__(self, name: str | None = None, dimension: int = None):
+    def __init__(self, name: str | None = None, dimension: int | None = None):
         """
         Initialize a Geometry object with optional naming.
 
         Args:
             name (str | None): Optional name for the geometry. Defaults to a
                                generated name based on the class name and counter.
+            dimension (int | None): Optional dimension of the geometry. Defaults to None.
         """
         type(self).counter += 1
         self.xs = np.array([], dtype=float)  # X-coordinates of the geometry
