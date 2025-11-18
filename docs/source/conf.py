@@ -4,7 +4,7 @@
 import sys
 import os
 
-sys.path.insert(0, os.path.abspath('../geoparticle'))
+sys.path.insert(0, os.path.abspath('../../geoparticle'))
 
 project = 'geoparticle-documentation'
 copyright = '2025, Hong Zhu'
