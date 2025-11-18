@@ -1,6 +1,6 @@
 .. currentmodule:: geoparticle.base
 
-Operations module
+Base module
 =================
 
 .. automodule:: geoparticle.base
