@@ -1,8 +1,3 @@
-.. currentmodule:: geoparticle.base
-
-Utility functions
-==================
-
 .. currentmodule:: geoparticle.utils
 
 Utility functions
