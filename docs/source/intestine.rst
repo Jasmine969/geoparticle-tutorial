@@ -10,8 +10,11 @@ The expected result is as follows:
 
 .. image:: static/dimension-intestine.png
 
-Geoparticle elements we will learn in this tutorial include:
-???
+What we will learn in this tutorial:
+
+- Creating 3D geometries: ``CylinderSide``, ``TorusSurface``, and ``FilledCylinder``
+- Performing operations: ``mirror`` and ``Union``
+- Accessing ``Geometry`` class member: ``zs``
 
 ===================================
 Specify the parameters
@@ -142,6 +145,7 @@ the middle of the intestine:
 
 Finally, create the fluid that fills the intestine, which is a cylinder
 with a radius of ``r_si - dl`` to avoid overlapping with the intestine wall.
+
 .. code-block:: python
    :linenos:
 
