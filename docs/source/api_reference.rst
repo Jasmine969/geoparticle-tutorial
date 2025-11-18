@@ -1,7 +1,7 @@
 API Reference
 ==============
 
-Subpackages
+Modules
 -----------
 
 .. toctree::

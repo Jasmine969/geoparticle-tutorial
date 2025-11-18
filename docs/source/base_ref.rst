@@ -3,5 +3,6 @@
 Base class
 ===============
 
-.. autoclass:: Geometry
+(*Shortest import*: ``from geoparticle import Geometry``)
 
+.. autoclass:: Geometry
