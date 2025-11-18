@@ -18,7 +18,6 @@ Contents
    tutorials
    topo
    api_reference
-   base_ref
 
 ================
 Useful links
