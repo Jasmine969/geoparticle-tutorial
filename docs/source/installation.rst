@@ -7,14 +7,16 @@ Installing from PyPI
 
 .. code-block:: bash
 
+    # activate your virtual environment if needed
     pip install geoparticle
 
 =============================
 Installing from the source code
 =============================
 
-Download and enter the source code directory, then
+Download the source code from the `GitHub Repository <https://github.com/Jasmine969/geoparticle>`_ and
 
 .. code-block:: bash
 
-    pip install .
+    # activate your virtual environment if needed
+    pip install .\geoparticle\
