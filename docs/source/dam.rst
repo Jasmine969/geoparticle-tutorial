@@ -103,6 +103,8 @@ Now create the simulation box. We can leave some buffer between the geometries a
 Access the x-, y-, and z-coordinates of the wall geometry using the ``xs``, ``ys``, and ``zs`` properties.
 
 .. code-block:: python
+   :linenos:
+
    fac_buf = 1
    xlo = wall.xs.min() - wall.xs.max() * fac_buf
    xhi = wall.xs.max() * (1 + fac_buf)
