@@ -317,8 +317,7 @@ class Geometry(metaclass=CounterMeta):
         Args:
             other (Geometry): Another geometry to union with.
 
-        R
-          Returns:
+        Returns:
             Geometry: The updated geometry object (self) after the in-place union.
 
         Raises:
