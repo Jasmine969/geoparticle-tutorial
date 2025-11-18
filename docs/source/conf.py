@@ -1,13 +1,17 @@
 # Configuration file for the Sphinx documentation builder.
 
 # -- Project information
+import sys
+import os
+
+sys.path.insert(0, os.path.abspath('../geoparticle'))
 
 project = 'geoparticle-documentation'
 copyright = '2025, Hong Zhu'
 author = 'Hong Zhu'
 
-release = '0.1.1'
-version = '0.1.1'
+release = '1.0.2'
+version = '1.0.2'
 
 # -- General configuration
 
@@ -17,6 +21,8 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.viewcode'
 ]
 
 intersphinx_mapping = {
