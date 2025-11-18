@@ -68,6 +68,28 @@ autoapi_options = [
     'special-members',
     'imported-members',
 ]
+# 添加这些重要的autoapi配置
+autoapi_add_toctree_entry = True
+autoapi_keep_files = False
+autoapi_add_objects_to_toctree = True
+autoapi_python_use_implicit_namespaces = False
 
+# Napoleon配置（用于解析docstring）
+napoleon_google_docstring = True
+napoleon_numpy_docstring = True
+napoleon_include_init_with_doc = True
+napoleon_include_private_with_doc = False
+napoleon_include_special_with_doc = True
+napoleon_use_admonition_for_examples = True
+napoleon_use_admonition_for_notes = True
+napoleon_use_admonition_for_references = True
+napoleon_use_ivar = True
+napoleon_use_param = True
+napoleon_use_rtype = True
+napoleon_use_keyword = True
+napoleon_custom_sections = None
+
+# 确保Python能够找到你的模块
+python_use_unqualified_type_names = True
 # 禁用标准的autodoc，避免重复
 autodoc_typehints = 'none'
