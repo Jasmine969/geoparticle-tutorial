@@ -7,7 +7,3 @@ Base class
 
 .. autoclass:: Geometry
    :members:
-   :special-members: __init__
-   :private-members:
-   :undoc-members:
-   :show-inheritance:

@@ -39,3 +39,19 @@ html_theme = 'sphinx_rtd_theme'
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+
+autodoc_default_options = {
+    'members': True,                    # display all members
+    'member-order': 'groupwise',
+    'special-members': '__init__',      # display __init__
+    'undoc-members': False,             # hide undocumented members
+    'show-inheritance': True,
+}
+
+napoleon_google_docstring = True
+napoleon_numpy_docstring = True
+napoleon_include_init_with_doc = True
+napoleon_include_private_with_doc = True
+napoleon_include_special_with_doc = True
+
+autoclass_content = 'both'
