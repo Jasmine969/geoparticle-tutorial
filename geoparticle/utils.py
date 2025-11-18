@@ -2,6 +2,7 @@
 Shared utilities for geometry construction.
 All angles are in radians internally unless noted.
 """
+
 from __future__ import annotations
 import numpy as np
 from warnings import warn

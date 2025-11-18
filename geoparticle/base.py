@@ -1,3 +1,11 @@
+"""
+This module defines a base Geometry class for handling geometric objects in 2D and 3D space.
+It includes methods for coordinate management,
+vector transformations (shift, mirror, rotate), and geometric operations
+(union, subtraction, intersection, stacking, clipping).
+The class also supports plotting and checking for overlapping points.
+"""
+
 from __future__ import annotations
 import numpy as np
 from copy import deepcopy

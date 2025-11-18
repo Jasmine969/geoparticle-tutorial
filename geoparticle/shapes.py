@@ -1,3 +1,7 @@
+"""
+This module provides various predefined geometric shapes in 2D and 3D,
+including lines, arcs, rectangles, circles, blocks, cylinders, tori, and spheres.
+"""
 from warnings import warn
 from .utils import *
 from .ops import *

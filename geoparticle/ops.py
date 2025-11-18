@@ -1,3 +1,9 @@
+"""
+This module provides various geometric operations on Geometry objects,
+including shifting, mirroring, rotating, union, subtraction, intersection,
+stacking, and clipping.
+"""
+
 from __future__ import annotations
 import numpy as np
 from .base import Geometry

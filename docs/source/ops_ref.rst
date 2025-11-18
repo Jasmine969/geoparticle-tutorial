@@ -1,9 +1,36 @@
 .. currentmodule:: geoparticle.ops
 
-Operations
-============
+Operations module
+=================
 
-(*Shortest import*: ``from geoparticle import Geometry``)
+.. automodule:: geoparticle.ops
+    :show-inheritance:
 
-.. autoclass:: Geometry
-   :members:
+:mod:`ops` module
+--------------------
+
+**Classes**
+
+.. autosummary:: Shift
+    :toctree:
+
+.. autosummary:: Mirror
+    :toctree:
+
+.. autosummary:: Rotate
+    :toctree:
+
+.. autosummary:: Union
+    :toctree:
+
+.. autosummary:: Subtract
+    :toctree:
+
+.. autosummary:: Intersect
+    :toctree:
+
+.. autosummary:: Stack
+    :toctree:
+
+.. autosummary:: Clip
+    :toctree:
