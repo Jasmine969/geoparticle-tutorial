@@ -34,6 +34,8 @@ class Geometry(metaclass=CounterMeta):
     """
     Base class for geometry objects, providing utilities for vector transformations
     and coordinate management.
+
+    Shortest import: from geoparticle import Geometry
     """
 
     def __init__(self, name: str | None = None, dimension: int = None):
