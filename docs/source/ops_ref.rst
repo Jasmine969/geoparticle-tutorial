@@ -21,38 +21,3 @@ Operations module
    Intersect
    Stack
    Clip
-
-**Class Details**
------------------
-
-.. autoclass:: Shift
-   :members:
-   :show-inheritance:
-
-.. autoclass:: Mirror
-   :members:
-   :show-inheritance:
-
-.. autoclass:: Rotate
-   :members:
-   :show-inheritance:
-
-.. autoclass:: Union
-   :members:
-   :show-inheritance:
-
-.. autoclass:: Subtract
-   :members:
-   :show-inheritance:
-
-.. autoclass:: Intersect
-   :members:
-   :show-inheritance:
-
-.. autoclass:: Stack
-   :members:
-   :show-inheritance:
-
-.. autoclass:: Clip
-   :members:
-   :show-inheritance:

@@ -16,12 +16,3 @@ Utility functions
    n_per_ring
    spacing_ring
    get_wall_ID
-
-**Function Details**
---------------------
-
-.. autofunction:: n_per_ring
-
-.. autofunction:: spacing_ring
-
-.. autofunction:: get_wall_ID

@@ -14,11 +14,3 @@ Operations module
    :toctree: generated/
 
    Geometry
-
-
-**Class Details**
------------------
-
-.. autoclass:: Geometry
-   :members:
-   :show-inheritance:

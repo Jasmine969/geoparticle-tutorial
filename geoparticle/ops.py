@@ -14,7 +14,7 @@ class Shift(Geometry):
     """
     Shift geometry by given offsets in x, y, z directions.
 
-    Shortest import: from geoparticle import Shift
+    Shortest import: `from geoparticle import Shift`
     """
 
     def __init__(self, geo: Geometry,
@@ -38,7 +38,7 @@ class Mirror(Geometry):
     """
     Mirror geometry across a specified plane.
 
-    Shortest import: from geoparticle import Mirror
+    Shortest import: `from geoparticle import Mirror`
     """
     def __init__(self, geo: Geometry, plane_name: str, plane_pos: float, name=None):
         """
@@ -60,7 +60,7 @@ class Rotate(Geometry):
     """
     Rotate geometry around an axis by a given angle.
 
-    Shortest import: from geoparticle import Rotate
+    Shortest import: `from geoparticle import Rotate`
     """
 
     def __init__(self, geo: Geometry,
@@ -92,7 +92,7 @@ class Union(Geometry):
     """
     Concatenate multiple geometries.
 
-    Shortest import: from geoparticle import Union
+    Shortest import: `from geoparticle import Union`
     """
 
     def __init__(self, geometries: List[Geometry] | Tuple[Geometry], name=None):
@@ -116,7 +116,7 @@ class Subtract(Geometry):
     """
     Pointwise subtraction: keep points in geo1 farther than `rmax` from any point in geo2.
 
-    Shortest import: from geoparticle import Subtract
+    Shortest import: `from geoparticle import Subtract`
     """
 
     def __init__(self, geo1: Geometry, geo2: Geometry, rmax: float = 1e-5, name=None):
@@ -145,7 +145,7 @@ class Intersect(Geometry):
     - Intersect(g1, g2, g3, ..., rmax=1e-5)
     - Intersect([g1, g2, g3, ...], rmax=1e-5)
 
-    Shortest import: from geoparticle import Intersect
+    Shortest import: `from geoparticle import Intersect`
     """
 
     def __init__(self, geometries: Tuple[Geometry] | List[Geometry],
@@ -171,7 +171,7 @@ class Stack(Geometry):
     """
     Stack a 2D layer along an axis by repeating its points at dl-spacing.
 
-    Shortest import: from geoparticle import Stack
+    Shortest import: `from geoparticle import Stack`
     """
 
     def __init__(self, layer: Geometry, axis: str, n_axis: int,
@@ -195,7 +195,7 @@ class Clip(Geometry):
     """
     Half-space clipping by a named plane through the origin or an arbitrary plane.
 
-    Shortest import: from geoparticle import Clip
+    Shortest import: `from geoparticle import Clip`
     """
 
     def __init__(
