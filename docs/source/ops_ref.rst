@@ -9,9 +9,6 @@ Operations module
     :show-inheritance:
 
 :mod:`ops` module
---------------------
-
-**Classes**
 
 .. autosummary::
    :toctree: generated/
