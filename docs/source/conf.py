@@ -58,7 +58,7 @@ epub_show_urls = 'footnote'
 #
 # autoclass_content = 'both'
 autoapi_type = 'python'
-autoapi_dirs = ['../../geoparticle']  # 指向你的包目录
+autoapi_dirs = ['../..']  # 指向你的包目录
 autoapi_root = 'autoapi'
 autoapi_options = [
     'members',
