@@ -4,6 +4,8 @@ Operations module
 =================
 
 .. automodule:: geoparticle.ops
+    :no-members:           # 关键：不显示模块成员
+    :no-inheritance-members:  # 不显示继承的成员
     :show-inheritance:
 
 :mod:`ops` module
@@ -11,26 +13,49 @@ Operations module
 
 **Classes**
 
-.. autosummary:: Shift
-    :toctree:
+.. autosummary::
+   :toctree: generated/
 
-.. autosummary:: Mirror
-    :toctree:
+   Shift
+   Mirror
+   Rotate
+   Union
+   Subtract
+   Intersect
+   Stack
+   Clip
 
-.. autosummary:: Rotate
-    :toctree:
+**Class Details**
+-----------------
 
-.. autosummary:: Union
-    :toctree:
+.. autoclass:: Shift
+   :members:
+   :show-inheritance:
 
-.. autosummary:: Subtract
-    :toctree:
+.. autoclass:: Mirror
+   :members:
+   :show-inheritance:
 
-.. autosummary:: Intersect
-    :toctree:
+.. autoclass:: Rotate
+   :members:
+   :show-inheritance:
 
-.. autosummary:: Stack
-    :toctree:
+.. autoclass:: Union
+   :members:
+   :show-inheritance:
 
-.. autosummary:: Clip
-    :toctree:
+.. autoclass:: Subtract
+   :members:
+   :show-inheritance:
+
+.. autoclass:: Intersect
+   :members:
+   :show-inheritance:
+
+.. autoclass:: Stack
+   :members:
+   :show-inheritance:
+
+.. autoclass:: Clip
+   :members:
+   :show-inheritance:
