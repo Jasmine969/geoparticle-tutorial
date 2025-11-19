@@ -33,4 +33,4 @@ About the author
 
 Hi, my name is Hong Zhu. I am currently studying for a doctor's degree in Soochow University, China.
 I am interested in particle-based simulation. This is my `ResearhGate Homepage <https://www.researchgate.net/profile/Hong-Zhu-76>`_.
-For any question or suggestion regarding geoparticle, please post it at `geoparticle issue <https://github.com/Jasmine969/geoparticle/issues>`_.
+For any question or suggestion regarding geoparticle, please post it at `GitHub issues page <https://github.com/Jasmine969/geoparticle/issues>`_.
