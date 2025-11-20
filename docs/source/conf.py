@@ -10,8 +10,8 @@ project = 'geoparticle-documentation'
 copyright = '2025, Hong Zhu'
 author = 'Hong Zhu'
 
-release = '1.0.2'
-version = '1.0.2'
+release = '1.0.3'
+version = '1.0.3'
 
 # -- General configuration
 
