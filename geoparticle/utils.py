@@ -111,6 +111,8 @@ def _parse_interval_deg(interval: str) -> tuple[float, float, bool, bool, float]
     total = b - a
     if total > 360 + 1e-9:
         raise ValueError('Angular span cannot exceed 360 degrees')
+    if total == 360 and incl_min and incl_max:
+        raise ValueError('Cannot have full circle with both bounds inclusive. [0,360) is recommended')
     return a, b, incl_min, incl_max, total
 
 
@@ -142,9 +144,11 @@ def _discretize_arc_by_dl(r: float, dl: float, a_deg: float,
     return d_phi * np.arange(start, stop) + a
 
 
-def _resolve_axis_or_plane(axis: str | None = None, plane: str | None = None) -> str:
+def _resolve_axis_or_plane(*, axis: str | None = None, plane: str | None = None) -> str:
     """
     Resolve the 'up' axis based on the specified axis or plane.
+    You must specify the parameter names when calling this function.
+    Only one of `axis` or `plane` should be provided.
 
     Args:
         axis (str | None): Axis name ('x', 'y', or 'z').
@@ -184,7 +188,7 @@ def _transform_coordinate(xs: np.ndarray, ys: np.ndarray, zs: np.ndarray,
     Returns:
         tuple[np.ndarray, np.ndarray, np.ndarray]: Transformed coordinates.
     """
-    axis_up = _resolve_axis_or_plane(axis, plane)
+    axis_up = _resolve_axis_or_plane(axis=axis, plane=plane)
     if axis_up == 'z':
         xs, ys, zs = zs, xs, ys
     elif axis_up == 'x':

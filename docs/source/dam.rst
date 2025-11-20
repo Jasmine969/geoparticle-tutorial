@@ -58,6 +58,9 @@ See the doc of certain geometries for how they are postioned related to the orig
 Geoparticle typically does not provide any parameter to control the absolute position of the geometry.
 Instead, we can always use the ``shift`` method to move the geometry to the desired location.
 
+*Added since v 1.0.3*
+We can use the `anchor` parameter to directly control the absolute position of certain geometries.
+
 Now we should move the water region ``dl`` to the right and ``dl`` up to avoid overlapping
 with the wall, as well as the gas. To create the gas, we can create a large rectangle
 and subtract the water region from it:
@@ -66,8 +69,9 @@ and subtract the water region from it:
    :linenos:
 
    water = gp.FilledRectangle(
-       length=l_water, width=h_water, axis='z', dl=dl, name='water'
-   ).shift(x=dl, y=dl)
+       length=l_water, width=h_water, axis='z', dl=dl, name='water',
+       anchor=(dl, dl, 0)
+   )
    gas = gp.FilledRectangle(
        l_box - 2 * dl, h_box - 2 * dl, 'z', dl, name='gas'
    ).shift(x=dl, y=dl)
